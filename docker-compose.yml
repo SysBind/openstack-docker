@@ -8,4 +8,17 @@ services:
       context: ./keystone
     depends_on:
       - db
-      
+    ports:
+      - 5000:5000
+    environment:
+      - TESTING=true
+
+  glance:
+    build:
+      context: ./glance
+    depends_on:
+      - db
+      - keystone
+    environment:
+      - TESTING=true
+    
