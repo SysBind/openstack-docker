@@ -1,6 +1,7 @@
 #!/bin/sh
 
 keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
+keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
 
 if [ ! -z ${TESTING+x} ]; then
     psql --host db --tuples-only --user postgres -c "\l" | grep keystone || psql --host db --tuples-only --user postgres -c "CREATE DATABASE keystone"
