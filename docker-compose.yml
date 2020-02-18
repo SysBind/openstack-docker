@@ -34,3 +34,15 @@ services:
       - 5002:5000
     environment:
       - TESTING=true
+ 
+  nova-api:
+    build:
+      context: ./nova
+    depends_on:
+      - db
+      - keystone
+    ports:
+      - 5003:5000
+    environment:
+      - TESTING=true
+     

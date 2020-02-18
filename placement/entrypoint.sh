@@ -16,7 +16,7 @@ if [ ! -z ${1+x} ]; then
 	    echo "running arbitary command $@"
 	    $@
 	    ;;
-	  esac
+    esac
 else
     placement-manage db sync
     uwsgi --http 0.0.0.0:8778 --wsgi-file /usr/bin/placement-api	      

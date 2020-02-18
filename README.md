@@ -33,3 +33,17 @@ _Commands_:
 - registry
 
 or arbitary command
+
+
+## Placement (Resource Provider Inventory Allocation Service)
+
+_Minimum config_: 
+- /etc/placement/placement.conf
+
+_Commands_:
+- api: default, run uwsgi with the placement API
+
+or arbitary command
+
+
+## Nova (Compute Service)
