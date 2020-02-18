@@ -10,7 +10,7 @@ if [ ! -z ${1+x} ]; then
     case "$1" in
 	api)
 	    placement-manage db sync
-	    uwsgi --http 0.0.0.0:5000 --wsgi-file /usr/bin/placement-api
+	    uwsgi --http 0.0.0.0:8778 --wsgi-file /usr/bin/placement-api
 	    ;;
 	*)
 	    echo "running arbitary command $@"
@@ -19,6 +19,6 @@ if [ ! -z ${1+x} ]; then
 	  esac
 else
     placement-manage db sync
-    uwsgi --http 0.0.0.0:5000 --wsgi-file /usr/bin/placement-api	      
+    uwsgi --http 0.0.0.0:8778 --wsgi-file /usr/bin/placement-api	      
 fi	    
 
