@@ -14,7 +14,7 @@ if [ ! -z ${1+x} ]; then
 	    ;;
 	api)
 	    glance-manage db_sync
-	    uwsgi --http 0.0.0.0:9292 --wsgi-file /usr/bin/glance-wsgi-api
+	    /usr/bin/glance-api
 	    ;;
 	*)
 	    echo "running arbitary command $@"
