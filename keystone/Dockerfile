@@ -7,8 +7,9 @@ RUN pip3 install uwsgi psycopg2
 RUN mkdir /etc/keystone
 COPY keystone.conf /etc/keystone/keystone.conf
 COPY entrypoint.sh /
-ENTRYPOINT /entrypoint.sh
 RUN adduser -D keystone
 # cleanup
 RUN apk del build-deps
 
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["api"]
