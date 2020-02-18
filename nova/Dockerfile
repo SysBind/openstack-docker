@@ -6,6 +6,7 @@ RUN cd nova && pip3 install -e .
 RUN pip3 install uwsgi psycopg2
 RUN mkdir /etc/nova
 COPY nova.conf /etc/nova/nova.conf
+COPY entrypoint.sh /
 # cleanup
 RUN apk del build-deps
 

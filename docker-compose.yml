@@ -3,6 +3,14 @@ services:
   db:    
     image: "postgres"
 
+  rabbit:
+    image: rabbitmq:3-management
+    ports:
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=openstack
+      - RABBITMQ_DEFAULT_PASS=openstack
+
   keystone:
     build:
       context: ./keystone
@@ -40,6 +48,7 @@ services:
       context: ./nova
     depends_on:
       - db
+      - rabbit
       - keystone
     ports:
       - 5003:5000
