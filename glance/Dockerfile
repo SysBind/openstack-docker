@@ -7,6 +7,7 @@ RUN pip3 install uwsgi psycopg2
 RUN mkdir /etc/glance
 COPY glance-api.conf /etc/glance/glance-api.conf
 COPY glance-api-paste.ini /etc/glance/glance-api-paste.ini
+COPY glance-registry-paste.ini /etc/glance/glance-registry-paste.ini
 COPY entrypoint.sh /
 ENTRYPOINT /entrypoint.sh
 
