@@ -7,7 +7,10 @@ RUN pip3 install uwsgi psycopg2
 RUN mkdir /etc/placement
 COPY placement.conf /etc/placement/placement.conf
 COPY entrypoint.sh /
-ENTRYPOINT /entrypoint.sh
 # cleanup
 RUN apk del build-deps
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["api"]
+
 
