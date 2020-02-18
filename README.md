@@ -47,3 +47,13 @@ or arbitary command
 
 
 ## Nova (Compute Service)
+
+_Minimum config_: 
+- /etc/nova/nova.conf
+
+_Commands_:
+- api: default, run uwsgi with the Nova API
+- compute: run nova-compute
+
+or arbitary command
+

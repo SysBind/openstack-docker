@@ -16,7 +16,7 @@ if [ ! -z ${1+x} ]; then
 	api)
 	    nova-manage db sync
 	    nova-manage api_db sync
-	    uwsgi --http 0.0.0.0:8773 --wsgi-file /usr/bin/nova-api-wsgi
+	    uwsgi --http 0.0.0.0:8774 --wsgi-file /usr/bin/nova-api-wsgi
 	    ;;
 	*)
 	    echo "running arbitary command $@"
@@ -26,7 +26,7 @@ if [ ! -z ${1+x} ]; then
 else
     nova-manage db sync
     nova-manage api_db sync
-    uwsgi --http 0.0.0.0:8773 --wsgi-file /usr/bin/nova-api-wsgi
+    uwsgi --http 0.0.0.0:8774 --wsgi-file /usr/bin/nova-api-wsgi
 fi
 
 
