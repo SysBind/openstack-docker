@@ -1,4 +1,4 @@
-![Logo](https://github.com/SysBind/openstack/blob/master/logo.png)
+![Logo](https://github.com/SysBind/openstack-docker/blob/master/logo.png)
 # openstack-docker
 Open Stack Docker Images
 
