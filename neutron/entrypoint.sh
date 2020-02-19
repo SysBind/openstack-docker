@@ -10,7 +10,7 @@ if [ ! -z ${1+x} ]; then
     echo "got param $1"
     case "$1" in
 	api)
-	    neutron-manage db sync	    
+	    neutron-db-manage sync
 	    /usr/bin/neutron-api
 	    ;;
 	server)
@@ -22,7 +22,7 @@ if [ ! -z ${1+x} ]; then
 	    ;;
     esac
 else
-    neutron-manage db sync	        
+    neutron-db-manage sync	        
     /usr/bin/neutron-api
 fi
 

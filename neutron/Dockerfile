@@ -7,6 +7,7 @@ RUN cd neutron && pip3 install -e .
 RUN apk del build-deps && rm -rf /neutron/.git
 RUN mkdir /etc/neutron
 COPY neutron.conf /etc/neutron/neutron.conf
+COPY api-paste.ini /etc/nova/api-paste.ini
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["api"]
