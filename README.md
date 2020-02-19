@@ -9,6 +9,9 @@ No environment variables support, use volumes to configure,
 e.g: /etc/keystone/keystone.cfg
 or entire /etc/keystone
 
+All images will run `x-manage db sync` upon starting with the 'api' command
+(In case of Nova, also `nova-manage api_db sync` will run)
+
 ## Keystone (Identity Service)
 
 _Minimum config_: 
@@ -35,6 +38,8 @@ _Commands_:
 
 or arbitary command
 
+_Volumes_:
+- /var/lib/glance/images
 
 ## Placement (Resource Provider Inventory Allocation Service)
 
@@ -61,3 +66,21 @@ _Commands_:
 
 or arbitary command
 
+_Volumes_:
+- nova-compute: /var/run/libvirt, /nova/instances
+
+_Notes_:
+- nova-compute should run with --priveleged
+- nova-compute host should have working libvirt daemon running
+
+
+## Neutron (Network Service)
+
+_Minimum config_: 
+- /etc/neutron/neutron.conf
+
+_Commands_:
+- api: default, Neutron API
+- server: run neutron-server
+
+or arbitary command
