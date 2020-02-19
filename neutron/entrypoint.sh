@@ -16,6 +16,15 @@ if [ ! -z ${1+x} ]; then
 	server)
 	    neutron-server
 	    ;;
+        linuxbridge-agent)
+	    neutron-linuxbridge-agent
+	    ;;
+	dhcp-agent)
+	    neutron-dhcp-agent
+	    ;;
+	metadata-agent)
+	    neutron-metadata-agent
+	    ;;
 	*)
 	    echo "running arbitary command $@"
 	    $@

@@ -82,5 +82,8 @@ _Minimum config_:
 _Commands_:
 - api: default, Neutron API
 - server: run neutron-server
+- linuxbridge-agent
+- dhcp-agent
+- metadata-agent
 
 or arbitary command
