@@ -55,6 +55,9 @@ _Minimum config_:
 _Commands_:
 - api: default, run uwsgi with the Nova API
 - compute: run nova-compute
+- scheduler: run nova-scheduler
+- conductor: run nova-conductor
+- novncproxy: run nova-novncproxy
 
 or arbitary command
 

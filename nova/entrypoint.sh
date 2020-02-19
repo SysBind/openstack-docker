@@ -18,6 +18,15 @@ if [ ! -z ${1+x} ]; then
 	    nova-manage api_db sync
 	    /usr/bin/nova-api
 	    ;;
+	scheduler)
+	    nova-scheduler
+	    ;;
+	conductor)
+	    nova-conductor
+	    ;;
+	novncproxy)
+	    nova-novncproxy
+	    ;;
 	*)
 	    echo "running arbitary command $@"
 	    $@
