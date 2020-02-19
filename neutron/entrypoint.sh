@@ -11,7 +11,7 @@ if [ ! -z ${1+x} ]; then
     case "$1" in
 	api)
 	    neutron-db-manage upgrade head
-	    /usr/bin/neutron-api
+	    uwsgi --http 0.0.0.0:9696 --wsgi-file /usr/bin/neutron-api
 	    ;;
 	server)
 	    neutron-server
@@ -23,7 +23,7 @@ if [ ! -z ${1+x} ]; then
     esac
 else
     neutron-db-manage upgrade head
-    /usr/bin/neutron-api
+    uwsgi --http 0.0.0.0:9696 --wsgi-file /usr/bin/neutron-api
 fi
 
 
