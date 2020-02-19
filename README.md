@@ -10,7 +10,7 @@ e.g: /etc/keystone/keystone.cfg
 or entire /etc/keystone
 
 All images will run `x-manage db sync` upon starting with the 'api' command
-(In case of Nova, also `nova-manage api_db sync` will run)
+(In case of Nova, also `nova-manage api_db sync` will run, or `neutron-db-manage upgrade head` for Neutron)
 
 ## Keystone (Identity Service)
 
