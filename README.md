@@ -87,3 +87,6 @@ _Commands_:
 - metadata-agent
 
 or arbitary command
+
+_Notes_:
+- linuxbridge-agent should run with --cap-add=NET_ADMIN 
